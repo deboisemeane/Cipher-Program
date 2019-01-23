@@ -1,12 +1,11 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
+This program encodes simple text containing letters, numbers and basic punctuation through either a cipher of my own design(Varvill),
+or a more simple Caesar cipher using a key of any length and the same content as the text.
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PROJECT TITLE: Varvill-Cipher Program
+PURPOSE OF PROJECT:Fun
+VERSION or DATE:2/1/2019
+HOW TO START THIS PROJECT:Run either the Varvill or Caesar encode to encode a message and run the Varvill or Caesar decode to unencrypt the message.
+AUTHORS:James Cook
+
