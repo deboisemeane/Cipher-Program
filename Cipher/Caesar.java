@@ -67,7 +67,6 @@ public class Caesar
         
         
         String outLetter = "error";
-        String keyLetter = "error";
         String textLetter = "error";
         
         
