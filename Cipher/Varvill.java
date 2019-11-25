@@ -13,7 +13,7 @@ public class Varvill
 
     
     
-    public static void encode(String textIn, String key)
+    public static String encode(String textIn, String key)
     {
         valuesMap m = new valuesMap();
 
@@ -27,6 +27,7 @@ public class Varvill
         String outLetter = "error";
         String keyLetter = "error";
         String textLetter = "error";
+        String output = "";
         
         
         
@@ -63,15 +64,16 @@ public class Varvill
             //converts final number to a letter to be printed
             outLetter = (String)m.numberToLetter.get(outNumber);
             
-            System.out.print(outLetter);
+            output = output+ outLetter;
             //increases the key number to step through the key
             keyChar++;
             
         }
+        return output;
         
     }
     
-    public static void Decode(String textIn, String key)
+    public static String decode(String textIn, String key)
     {
         valuesMap m = new valuesMap();
 
@@ -84,6 +86,7 @@ public class Varvill
         String outLetter = "error";
         String keyLetter = "error";
         String textLetter = "error";
+        String output = "";
         
         
         
@@ -116,11 +119,12 @@ public class Varvill
             }
             
             outLetter = (String)m.numberToLetter.get(outNumber);
-            
-            System.out.print(outLetter);
+
+            output = output+ outLetter;
             keyChar++;
             
         }
+        return output;
         
     }
 }

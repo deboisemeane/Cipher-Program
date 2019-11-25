@@ -10,7 +10,7 @@ public class Caesar
 {
     // instance variables - replace the example below with your own
     
-    public static void encode(String textIn, int step)
+    public static String encode(String textIn, int step)
     {
         valuesMap m = new valuesMap();
 
@@ -22,6 +22,7 @@ public class Caesar
         
         String outLetter = "error";
         String textLetter = "error";
+        String output = "";
         
         
         
@@ -50,13 +51,14 @@ public class Caesar
             }
             
             outLetter = (String)m.numberToLetter.get(outNumber);
-            
-            System.out.print(outLetter);
+
+            output = output+ outLetter;;
             
         }
+        return output;
     }
     
-    public static void decode(String textIn, int step)
+    public static String decode(String textIn, int step)
     {
         valuesMap m = new valuesMap();
         
@@ -68,6 +70,7 @@ public class Caesar
         
         String outLetter = "error";
         String textLetter = "error";
+        String output = "";
         
         
         
@@ -95,9 +98,10 @@ public class Caesar
             }
             
             outLetter = (String)m.numberToLetter.get(outNumber);
-            
-            System.out.print(outLetter);
+
+            output = output+ outLetter;
             
         }
+        return output;
     }
 }
