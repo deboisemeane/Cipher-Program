@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
-    JTextField encrypted;
-    JTextField message;
+    JTextArea encrypted;
+    JTextArea message;
     JTextField key;
     JButton Encrypt;
     JButton Decrypt;
@@ -25,10 +25,21 @@ public class GUI extends JFrame implements ActionListener {
     public GUI() {
         super("Cipher - by James");
 
-        setSize(1200, 600);
-        setResizable(false);
+        setSize(800, 300);
+        setResizable(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(5,2));
+        setLayout(new BorderLayout());
+        JPanel top = new JPanel();
+        top.setLayout(new GridLayout(1,2));
+        JPanel bottom = new JPanel();
+        bottom.setLayout(new GridLayout(2,2));
+        JPanel bottomLeft = new JPanel();
+        bottomLeft.setLayout(new GridLayout(1,2));
+        JPanel bottomRight = new JPanel();
+        bottomRight.setLayout(new GridLayout(1,2));
+        JPanel middle = new JPanel();
+        middle.setLayout(new GridLayout(1,2,5,5));
+
 
         Encrypt = new JButton("Encrypt");
         Encrypt.setActionCommand("Encrypt");
@@ -37,12 +48,14 @@ public class GUI extends JFrame implements ActionListener {
         Encrypt.addActionListener(this);
         Decrypt.addActionListener(this);
 
-        message = new JTextField("",30);
-        encrypted = new JTextField("",30);
+        message = new JTextArea("");
+        message.setLineWrap(true);
+        encrypted = new JTextArea("");
+        encrypted.setLineWrap(true);
         key = new JTextField("Key",10);
-        mLabel = new JLabel("Message >");
-        emLabel = new JLabel("Encrypted Message >");
-        keyLabel = new JLabel("Key/Step >");
+        mLabel = new JLabel("  Message ↓");
+        emLabel = new JLabel("  Encrypted Message ↓");
+        keyLabel = new JLabel("  Key/Step >");
 
         vignere = new JRadioButton("Vignere");
         caesar = new JRadioButton("Caesar");
@@ -53,17 +66,25 @@ public class GUI extends JFrame implements ActionListener {
         codes.add(caesar);
 
 
+        add(top, BorderLayout.PAGE_START);
+        top.add(mLabel);
+        top.add(emLabel);
+        add(middle, BorderLayout.CENTER);
+        middle.add(message);
+        middle.add(encrypted);
+        add(bottom, BorderLayout.PAGE_END);
+        bottom.add(Encrypt);
+        bottom.add(Decrypt);
+        bottom.add(bottomLeft);
+        bottom.add(bottomRight);
+        bottomLeft.add(keyLabel);
+        bottomLeft.add(key);
+        bottomRight.add(vignere);
+        vignere.setSelected(true);
+        bottomRight.add(caesar);
 
-        add(Encrypt);
-        add(Decrypt);
-        add(mLabel);
-        add(message);
-        add(emLabel);
-        add(encrypted);
-        add(keyLabel);
-        add(key);
-        add(vignere);
-        add(caesar);
+
+
 
     }
 
