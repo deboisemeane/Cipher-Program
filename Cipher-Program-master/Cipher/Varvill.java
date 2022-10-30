@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.HashMap;
 /**
  * Write a description of class Encode here.
- *
+ * hello
  * @author (James Cook)
  * @version (a version number or a date)
  */
